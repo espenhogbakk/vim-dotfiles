@@ -74,10 +74,10 @@ set incsearch
 set encoding=utf-8
 
 " Disable the arrow keys. You'll thank me later.
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 " Display a list of completion alternatives.
 set wildmenu
