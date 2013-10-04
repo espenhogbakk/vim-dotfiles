@@ -79,6 +79,8 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+map <space> :e#
+
 " Display a list of completion alternatives.
 set wildmenu
 
