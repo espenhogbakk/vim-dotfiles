@@ -2,6 +2,12 @@
 nnoremap ' `
 nnoremap ` '
 
+" Alias :WQ, :W and :Q to their lowercase variants
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 " Remap leader to ",".
 let mapleader = ","
 
