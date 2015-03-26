@@ -1,3 +1,39 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'wincent/command-t'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+Plugin 'godlygeek/tabular'
+Plugin 'valloric/youcompleteme'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-rails'
+
+Plugin 'plasticboy/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+" Load plugins and indentation preferences based on file type.
+filetype on
+filetype plugin on
+filetype indent on
+
+" Remap leader to ",".
+let mapleader = ","
+
 " Jump to the marked line and column on ', and only the marked line on `.
 nnoremap ' `
 nnoremap ` '
@@ -7,9 +43,6 @@ nnoremap ` '
 :command Wq wq
 :command W w
 :command Q q
-
-" Remap leader to ",".
-let mapleader = ","
 
 " Keep 1000 commands worth of history.
 set history=1000
@@ -33,6 +66,8 @@ set clipboard=unnamed
 " Maintain at least 3 lines worth of context around the cursor.
 set scrolloff=3
 
+imap <Tab> <C-P>
+
 " Show line numbers
 set number
 
@@ -41,14 +76,6 @@ colorscheme busybee
 
 " Enable syntax highlighting
 syntax on
-
-" Load plugins and indentation preferences based on file type.
-filetype on
-filetype plugin on
-filetype indent on
-
-" Initialize pathogen.
-call pathogen#infect()
 
 " Quickly edit and source ~/.vimrc.
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -85,6 +112,7 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" Easy switch between files using space
 map <space> :e#
 
 " Display a list of completion alternatives.
@@ -122,4 +150,3 @@ augroup END
 " Remove trailing whitespace on save
 autocmd BufWritePre *.rb,*.py,*.js :call Preserve("%s/\\s\\+$//e")
 nnoremap <silent> <F5> :call Preserve("%s/\\s\\+$//e")<CR>
-
